@@ -1,0 +1,58 @@
+.card{
+    width: 18rem;
+    margin: 20px;
+    box-shadow: 0 0 1px 1px #DDDDDD;
+    background: linear-gradient(90deg, #B4B4B4, #FBFBFB, #DBDBDB, #FCFCFC, #DDDDDD);
+    border: none;
+    border-radius: 0 0 15px 15px;
+}
+
+
+.starting_price--rotating{
+    font-size: 23px;
+    margin: 0;
+    line-height: 45px;
+    overflow: hidden;
+
+
+    .starting_price--text{
+        display: inline-flex;
+        margin: 0;
+        vertical-align: top;
+
+        .word{
+            position:absolute;
+            display: flex;
+            opacity:0;
+
+            .letter{
+                transform-origin: center center 25px;
+                display: inline-block;
+                transform: rotateX(0);
+
+                &.out{
+                    transform:
+                            rotateX(90deg);
+                    transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+                }  /* &.out */
+
+                &.in{
+                    transition: 0.38s ease;
+                } /* &.in */
+
+                &.behind{
+                    tansform: rotateX(-90deg);
+                }/* &.behind */
+            } /* letter  */
+        } /* word   */
+    } /* starting_price--text  */
+} /*  starting_price--rotating   */
+
+.starting_price--default{
+    color: #555;
+}
+
+.starting_price--activated{
+    color: #27ae60;
+}
+
